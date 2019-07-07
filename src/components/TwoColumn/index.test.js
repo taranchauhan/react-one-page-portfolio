@@ -1,5 +1,5 @@
-import React from 'components/TwoColumn/react';
-import { shallow } from 'components/TwoColumn/enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 import TwoColumn from './index';
 
 describe('<TwoColumn />', () => {

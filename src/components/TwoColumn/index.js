@@ -1,55 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Projects from 'containers/Projects';
 import About from 'containers/About';
 import Contact from 'containers/Contact';
+import LeftColumnContent from 'components/LeftColumnContent';
 
 const Row = styled.div`
-  display: flex;
-  height: 100vh;
+  width: 100%;
+  @media (min-width: 500px) {
+    display: flex;
+  }
 `;
 
 const Column = styled.div`
-  flex: 50%;
-  padding: 10px;
-  border: 1px solid;
+  @media (min-width: 500px) {
+    flex: ${props => (props.flex ? props.flex : '50%')};
+    position: relative;
+    min-height: 100vh;
+    padding: 40px 40px 135px;
+  }
 `;
-
-const Ul = styled.ul`
-  list-style: none;
-`;
-
-const Li = styled.li``;
-
-const StyledLink = styled(Link)``;
 
 const TwoColumn = () => (
-  <Router>
-    <Row>
-      <Column>
-        <h1>Portfolio</h1>
-        <h2>Subtitle</h2>
-        <Ul>
-          <Li>
-            <StyledLink to="/">Projects</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/about">About</StyledLink>
-          </Li>
-          <Li>
-            <StyledLink to="/contact">Contact</StyledLink>
-          </Li>
-        </Ul>
-      </Column>
-      <Column>
+  <Row>
+    <Column flex="30%">
+      <LeftColumnContent />
+    </Column>
+    <Column flex="70%">
+      <Router>
         <Route exact path="/" component={Projects} />
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={Contact} />
-      </Column>
-    </Row>
-  </Router>
+      </Router>
+    </Column>
+  </Row>
 );
 
 export default TwoColumn;

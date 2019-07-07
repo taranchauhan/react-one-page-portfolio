@@ -1,6 +1,6 @@
-# React Skeleton
+# React one page Portfolio
 
-React Skeleton is a boilerplate repository for creating a new React web application.
+React one page Portfolio is a simple portfolio template to showcase your personal projects.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

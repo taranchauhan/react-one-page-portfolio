@@ -1,4 +1,5 @@
 export default {
   primary: 'black',
-  fontFamily: 'Raleway',
+  fontFamily: `-apple-system, BlinkMacSystemFont, 
+    Helvetica, Arial, sans-serif !important`,
 };

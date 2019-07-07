@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> should render the Home page 1`] = `
+<styled.div>
+  <h2>
+    Home
+  </h2>
+</styled.div>
+`;

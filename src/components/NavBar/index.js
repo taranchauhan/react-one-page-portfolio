@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Ul = styled.ul`
   list-style: none;
@@ -11,7 +11,7 @@ const Li = styled.li``;
 const StyledLink = styled(Link)``;
 
 const NavBar = () => (
-  <Router>
+  <React.Fragment>
     <Ul>
       <Li>
         <StyledLink to="/">Projects</StyledLink>
@@ -53,7 +53,7 @@ const NavBar = () => (
         <StyledLink to="/">Project 9</StyledLink>
       </Li>
     </Ul>
-  </Router>
+  </React.Fragment>
 );
 
 export default NavBar;

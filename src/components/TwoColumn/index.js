@@ -19,23 +19,22 @@ const Column = styled.div`
     flex: ${props => (props.flex ? props.flex : '50%')};
     position: relative;
     min-height: 100vh;
-    padding: 40px 40px 135px;
   }
 `;
 
 const TwoColumn = () => (
-  <Row>
-    <Column flex="30%">
-      <LeftColumnContent />
-    </Column>
-    <Column flex="70%">
-      <Router>
+  <Router>
+    <Row>
+      <Column flex="30%">
+        <LeftColumnContent />
+      </Column>
+      <Column flex="70%">
         <Route exact path="/" component={Projects} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
-      </Router>
-    </Column>
-  </Row>
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+      </Column>
+    </Row>
+  </Router>
 );
 
 export default TwoColumn;

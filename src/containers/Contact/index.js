@@ -1,15 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Typography } from '@smooth-ui/core-sc';
-
-const Container = styled.div`
-  padding: 20px;
-`;
+import RightColumnContent from 'components/RightColumnContent';
 
 const Contact = () => (
-  <Container>
-    <Typography variant="h1">Contact</Typography>
-  </Container>
+  <RightColumnContent title="Contact">
+    <Typography variant="h2">This is the contacts page subtitle</Typography>
+  </RightColumnContent>
 );
 
 export default Contact;

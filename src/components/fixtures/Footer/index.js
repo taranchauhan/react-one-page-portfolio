@@ -4,6 +4,7 @@ import BackToTopIcon from 'components/icons/BackToTopIcon';
 
 const FooterContainer = styled.div`
   position: fixed;
+  z-index: 10;
   left: 0;
   bottom: 0;
   height: 50px;

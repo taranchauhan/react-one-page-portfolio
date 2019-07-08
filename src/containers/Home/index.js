@@ -1,7 +1,6 @@
 import React from 'react';
-import { Typography } from '@smooth-ui/core-sc';
 import BaseContainer from 'components/fixtures/BaseContainer';
-import { Link } from 'react-router-dom';
+import Card from 'components/surfaces/Card';
 
 const Project = () => (
   <BaseContainer
@@ -9,9 +8,12 @@ const Project = () => (
     subtitle="Full Stack Developer"
     subtitleValue="Rexdale, Canada"
   >
-    <Typography variant="h6">
-      <Link to="/project/app">Learn more...</Link>
-    </Typography>
+    <Card />
+    <Card flipped />
+    <Card />
+    <Card flipped />
+    <Card />
+    <Card flipped />
   </BaseContainer>
 );
 

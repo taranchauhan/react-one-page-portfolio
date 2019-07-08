@@ -6,14 +6,19 @@ import Subtitle from 'components/typography/Subtitle';
 import Footer from 'components/fixtures/Footer';
 
 const StyledContainer = styled.div`
-  margin: 50px 0 0 50px;
+  margin: 20px 20px 20px 20px;
+`;
+
+const ContentContainer = styled.div`
+  margin-top: 50px;
+  margin-bottom: 75px;
 `;
 
 const BaseContainer = ({ title, subtitle, subtitleValue, children }) => (
   <StyledContainer>
     <Heading>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />
-    <React.Fragment>{children}</React.Fragment>
+    <ContentContainer>{children}</ContentContainer>
     <Footer />
   </StyledContainer>
 );

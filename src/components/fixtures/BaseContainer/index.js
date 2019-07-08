@@ -5,11 +5,8 @@ import Heading from 'components/typography/Heading';
 import Subtitle from 'components/typography/Subtitle';
 import Footer from 'components/fixtures/Footer';
 
-const StyledContainer = styled.main`
-  border-top: 10px solid;
-  flex: 1;
-  padding: 50px;
-  width: 100%;
+const StyledContainer = styled.div`
+  margin: 50px 0 0 50px;
 `;
 
 const BaseContainer = ({ title, subtitle, subtitleValue, children }) => (

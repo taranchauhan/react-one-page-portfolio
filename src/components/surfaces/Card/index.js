@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col, Box, Button, Typography } from '@smooth-ui/core-sc';
 import useMedia from 'utils/hooks/useMedia';
 
+import ProjectImage from 'assets/images/project.jpg';
+
 const ResponsiveImage = styled.img`
   max-width: 100%;
   height: auto;
@@ -54,7 +56,7 @@ const SectionB = () => (
       alignItems="center"
       backgroundColor="white"
     >
-      <ResponsiveImage alt="Project" src="https://via.placeholder.com/300" />
+      <ResponsiveImage alt="Project" src={ProjectImage} />
     </Box>
   </Col>
 );

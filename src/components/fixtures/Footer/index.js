@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackToTopIcon from 'components/icons/BackToTopIcon';
+import BackToTopButton from 'components/inputs/buttons/BackToTopButton';
 
 const FooterContainer = styled.div`
   position: fixed;
@@ -23,7 +23,7 @@ const CentralAlign = styled.div`
 const Footer = () => (
   <FooterContainer>
     <CentralAlign>
-      <BackToTopIcon />
+      <BackToTopButton scrollStepInPx="50" delayInMs="16.66" />
     </CentralAlign>
   </FooterContainer>
 );

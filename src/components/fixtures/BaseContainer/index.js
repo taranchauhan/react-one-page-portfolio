@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import SocialMediaIcons from 'components/icons/SocialMediaIcons';
 import Heading from 'components/typography/Heading';
 import Subtitle from 'components/typography/Subtitle';
 import Footer from 'components/fixtures/Footer';
@@ -16,6 +17,7 @@ const ContentContainer = styled.div`
 
 const BaseContainer = ({ title, subtitle, subtitleValue, children }) => (
   <StyledContainer>
+    <SocialMediaIcons />
     <Heading>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />
     <ContentContainer>{children}</ContentContainer>

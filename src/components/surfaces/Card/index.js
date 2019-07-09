@@ -2,106 +2,50 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Grid, Row, Col, Box, Button, Typography } from '@smooth-ui/core-sc';
-import useMedia from 'utils/hooks/useMedia';
+import { Box } from '@smooth-ui/core-sc';
 
 const ResponsiveImage = styled.img`
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
   max-width: 100%;
   height: auto;
 `;
 
-const Description = styled.p`
-  font-weight: 200;
-  font-size: 15px;
-  font-style: italic;
-  word-wrap: break-word;
+const Title = styled.span`
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 1.2rem;
 `;
 
-const SectionA = ({ name, subtitle, description, url }) => (
-  <Col xl={9} lg={9} md={8} sm={12} xs={12}>
-    <Box
-      display="flex"
-      justifyContent="space-evenly"
-      flexDirection="column"
-      backgroundColor="white"
-    >
-      <Typography variant="h2">{name}</Typography>
-      <Typography variant="h6">{subtitle}</Typography>
-      <Description>{description}</Description>
+const Subtitle = styled.span`
+  margin-top: 0.3rem;
+  font-weight: 200;
+  font-size: 0.9rem;
+  color: darkgray;
+`;
 
-      <Link to={url}>
-        <Button mb={10} alignSelf="flex-start" variant="dark">
-          Learn more
-        </Button>
-      </Link>
-    </Box>
-  </Col>
-);
-
-const SectionB = ({ image }) => (
-  <Col xl={3} lg={3} md={4} sm={12} xs={12}>
-    <Box
-      display="flex"
-      justifyContent="flex-start"
-      alignItems="center"
-      backgroundColor="white"
-    >
+const Card = ({ name, subtitle, image, url }) => (
+  <Box
+    mb={25}
+    display="flex"
+    flexDirection="column"
+    justifyContent="center"
+    backgroundColor="white"
+  >
+    <Link to={url}>
       <ResponsiveImage alt="Project" src={image} />
-    </Box>
-  </Col>
+    </Link>
+    <Title variant="h2">{name}</Title>
+    <Subtitle variant="h6">{subtitle}</Subtitle>
+  </Box>
 );
-
-const Card = ({ name, subtitle, description, url, image, flipped }) => {
-  const isSmallScreen = useMedia('(max-width: 767px)');
-  return (
-    <Grid mt={20} ml={0} mr={0}>
-      {!flipped || isSmallScreen ? (
-        <Row>
-          <SectionA
-            name={name}
-            subtitle={subtitle}
-            description={description}
-            url={url}
-          />
-          <SectionB image={image} />
-        </Row>
-      ) : (
-        <Row>
-          <SectionB image={image} />
-          <SectionA
-            name={name}
-            subtitle={subtitle}
-            description={description}
-            url={url}
-          />
-        </Row>
-      )}
-    </Grid>
-  );
-};
-
-SectionA.propTypes = {
-  name: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-};
-
-SectionB.propTypes = {
-  image: PropTypes.string.isRequired,
-};
 
 Card.propTypes = {
-  flipped: PropTypes.bool,
   name: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-};
-
-Card.defaultProps = {
-  flipped: false,
 };
 
 export default Card;

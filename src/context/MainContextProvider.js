@@ -76,6 +76,63 @@ const projects = {
     ],
     url: '/project/bad-habits',
   },
+  'house-of-balloons': {
+    name: 'House of Balloons',
+    subtitle: 'EP Collab with Metroboomin',
+    subtitleValue: '2019',
+    technologies: ['ReactJS', 'Java', 'SQL'],
+    caption: '<mark>React application</mark> built with passion.',
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.`,
+    images: [
+      { caption: 'Screenshot 1', ref: '/images/project.jpg' },
+      { caption: 'Screenshot 2', ref: '/images/project.jpg' },
+    ],
+    url: '/project/house-of-balloons',
+  },
+  'take-care': {
+    name: 'Take Care',
+    subtitle: 'EP Collab with Metroboomin',
+    subtitleValue: '2019',
+    technologies: ['ReactJS', 'Java', 'SQL'],
+    caption: '<mark>React application</mark> built with passion.',
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.`,
+    images: [
+      { caption: 'Screenshot 1', ref: '/images/project.jpg' },
+      { caption: 'Screenshot 2', ref: '/images/project.jpg' },
+    ],
+    url: '/project/take-care',
+  },
+  'call-me': {
+    name: 'Call Me',
+    subtitle: 'EP Collab with Metroboomin',
+    subtitleValue: '2019',
+    technologies: ['ReactJS', 'Java', 'SQL'],
+    caption: '<mark>React application</mark> built with passion.',
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.`,
+    images: [
+      { caption: 'Screenshot 1', ref: '/images/project.jpg' },
+      { caption: 'Screenshot 2', ref: '/images/project.jpg' },
+    ],
+    url: '/project/call-me',
+  },
 };
 
 const MainContextProvider = ({ children }) => (

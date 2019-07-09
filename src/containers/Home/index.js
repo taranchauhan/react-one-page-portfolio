@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid, Row, Col } from '@smooth-ui/core-sc';
 import BaseContainer from 'components/fixtures/BaseContainer';
 import Card from 'components/surfaces/Card';
 import MainContext from 'context/MainContext';
@@ -16,20 +17,30 @@ const Home = () => (
             caption={context.profile.caption}
             socialIcons={context.profile.socialIcons}
           >
-            {Object.keys(context.projects).map((key, index) => (
-              <Card
-                name={context.projects[key].name}
-                subtitle={`
-                ${context.projects[key].subtitle} - 
-                ${context.projects[key].subtitleValue}
-                `}
-                description={context.projects[key].description}
-                url={context.projects[key].url}
-                image={context.projects[key].images[0].ref}
-                key={context.projects[key].name}
-                flipped={(index + 1) % 2 === 0}
-              />
-            ))}
+            <Grid pl={0} pr={0}>
+              <Row>
+                {Object.keys(context.projects).map(key => (
+                  <Col
+                    xl={4}
+                    lg={4}
+                    md={6}
+                    sm={12}
+                    xs={12}
+                    key={context.projects[key].name}
+                  >
+                    <Card
+                      name={context.projects[key].name}
+                      subtitle={`
+                      ${context.projects[key].subtitle} - 
+                      ${context.projects[key].subtitleValue}
+                      `}
+                      image={context.projects[key].images[0].ref}
+                      url={context.projects[key].url}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </Grid>
           </BaseContainer>
         )
       }

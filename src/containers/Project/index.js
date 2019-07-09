@@ -1,16 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 import BaseContainer from 'components/fixtures/BaseContainer';
-import { Typography } from '@smooth-ui/core-sc';
+import Chip from 'components/surfaces/Chip';
 import MainContext from 'context/MainContext';
 import MainContextProvider from 'context/MainContextProvider';
+
+const Description = styled.p`
+  font-weight: 200;
+  font-size: 15px;
+  font-style: italic;
+  word-wrap: break-word;
+`;
+
+const ResponsiveImage = styled.img`
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+  }
+  max-width: 100%;
+  height: auto;
+`;
+
+const Subtitle = styled.p`
+  margin-top: 1rem;
+  font-weight: 200;
+  font-size: 1.2rem;
+  color: darkgray;
+`;
+
+const ChipContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+`;
 
 const Project = ({ location }) => {
   let { pathname } = location;
   pathname = pathname.split('/');
   [, , pathname] = pathname;
-  console.log(pathname);
   return (
     <MainContextProvider>
       <MainContext.Consumer>
@@ -24,13 +51,18 @@ const Project = ({ location }) => {
               caption={context.projects[pathname].caption}
               socialIcons={context.profile.socialIcons}
             >
-              <p>{context.projects[pathname].description}</p>
-              <Typography variant="h6">Technologies used</Typography>
-              <p>{context.projects[pathname].technologies.join(', ')}</p>
+              <ChipContainer>
+                {context.projects[pathname].technologies.map(tech => (
+                  <Chip>{tech}</Chip>
+                ))}
+              </ChipContainer>
+              <Description>
+                {context.projects[pathname].description}
+              </Description>
               {context.projects[pathname].images.map(image => (
                 <div key={image.url}>
-                  <img alt="Screenshot" src={image.ref} />
-                  <caption>{image.caption}</caption>
+                  <ResponsiveImage alt="Screenshot" src={image.ref} />
+                  <Subtitle>{image.caption}</Subtitle>
                 </div>
               ))}
             </BaseContainer>

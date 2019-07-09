@@ -8,11 +8,11 @@ import Caption from 'components//typography/Caption';
 import Footer from 'components/fixtures/Footer';
 
 const StyledContainer = styled.div`
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 991px) {
     margin: 0px 15px 0px 15px;
   }
   max-width: 960px;
-  padding: 100px 0px;
+  padding: 50px 0px;
   margin: 0 auto;
 `;
 

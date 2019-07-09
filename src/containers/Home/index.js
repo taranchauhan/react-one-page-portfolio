@@ -21,8 +21,8 @@ const Home = () => (
               <Row>
                 {Object.keys(context.projects).map(key => (
                   <Col
-                    xl={4}
-                    lg={4}
+                    xl={6}
+                    lg={6}
                     md={6}
                     sm={12}
                     xs={12}

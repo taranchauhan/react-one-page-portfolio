@@ -20,7 +20,7 @@ const Description = styled.p`
 `;
 
 const SectionA = () => (
-  <Col xl={10} lg={9} md={8} sm={12} xs={12}>
+  <Col xl={9} lg={9} md={8} sm={12} xs={12}>
     <Box
       display="flex"
       justifyContent="space-evenly"
@@ -49,7 +49,7 @@ const SectionA = () => (
 );
 
 const SectionB = () => (
-  <Col xl={2} lg={3} md={4} sm={12} xs={12}>
+  <Col xl={3} lg={3} md={4} sm={12} xs={12}>
     <Box
       display="flex"
       justifyContent="flex-start"

@@ -4,10 +4,16 @@ import PropTypes from 'prop-types';
 import SocialMediaIcons from 'components/icons/SocialMediaIcons';
 import Heading from 'components/typography/Heading';
 import Subtitle from 'components/typography/Subtitle';
+import Caption from 'components//typography/Caption';
 import Footer from 'components/fixtures/Footer';
 
 const StyledContainer = styled.div`
-  margin: 20px 20px 20px 20px;
+  @media only screen and (max-width: 767px) {
+    margin: 0px 15px 0px 15px;
+  }
+  max-width: 960px;
+  padding: 100px 0px;
+  margin: 0 auto;
 `;
 
 const ContentContainer = styled.div`
@@ -20,6 +26,10 @@ const BaseContainer = ({ title, subtitle, subtitleValue, children }) => (
     <SocialMediaIcons />
     <Heading>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />
+    <Caption>
+      <mark>Full stack developer</mark>, focused on building slick user
+      orientated web applications
+    </Caption>
     <ContentContainer>{children}</ContentContainer>
     <Footer />
   </StyledContainer>

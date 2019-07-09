@@ -52,14 +52,14 @@ const Project = ({ location }) => {
             >
               <ChipContainer>
                 {context.projects[pathname].technologies.map(tech => (
-                  <Chip>{tech}</Chip>
+                  <Chip key={tech}>{tech}</Chip>
                 ))}
               </ChipContainer>
               <Description>
                 {context.projects[pathname].description}
               </Description>
               {context.projects[pathname].images.map(image => (
-                <div key={image.url}>
+                <div key={image.caption}>
                   <ResponsiveImage alt="Screenshot" src={image.ref} />
                   <Subtitle>{image.caption}</Subtitle>
                 </div>

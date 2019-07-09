@@ -6,6 +6,7 @@ import Heading from 'components/typography/Heading';
 import Subtitle from 'components/typography/Subtitle';
 import Caption from 'components//typography/Caption';
 import Footer from 'components/fixtures/Footer';
+import BackArrowButton from 'components/inputs/buttons/BackArrowButton';
 
 const StyledContainer = styled.div`
   @media only screen and (max-width: 991px) {
@@ -30,6 +31,7 @@ const BaseContainer = ({
   children,
 }) => (
   <StyledContainer>
+    <BackArrowButton />
     <SocialMediaIcons icons={socialIcons} />
     <Heading>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />

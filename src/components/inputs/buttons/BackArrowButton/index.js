@@ -6,7 +6,7 @@ import BackArrowIcon from 'components/icons/BackArrowIcon';
 
 const StyledButton = styled.span`
   outline: 0;
-  position: fixed;
+  position: absolute;
   top: 50px;
 `;
 

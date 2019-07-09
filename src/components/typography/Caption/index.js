@@ -11,7 +11,13 @@ const CaptionText = styled.h1`
   line-height: 60px;
 `;
 
-const Caption = ({ children }) => <CaptionText>{children}</CaptionText>;
+function createMarkup(children) {
+  return { __html: children };
+}
+
+const Caption = ({ children }) => (
+  <CaptionText dangerouslySetInnerHTML={createMarkup(children)} />
+);
 
 Caption.propTypes = {
   children: PropTypes.string.isRequired,

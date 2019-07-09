@@ -21,15 +21,19 @@ const ContentContainer = styled.div`
   margin-bottom: 75px;
 `;
 
-const BaseContainer = ({ title, subtitle, subtitleValue, children }) => (
+const BaseContainer = ({
+  title,
+  subtitle,
+  subtitleValue,
+  caption,
+  socialIcons,
+  children,
+}) => (
   <StyledContainer>
-    <SocialMediaIcons />
+    <SocialMediaIcons icons={socialIcons} />
     <Heading>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />
-    <Caption>
-      <mark>Full stack developer</mark>, focused on building slick user
-      orientated web applications
-    </Caption>
+    <Caption>{caption}</Caption>
     <ContentContainer>{children}</ContentContainer>
     <Footer />
   </StyledContainer>
@@ -39,6 +43,13 @@ BaseContainer.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   subtitleValue: PropTypes.string.isRequired,
+  caption: PropTypes.node.isRequired,
+  socialIcons: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
   children: PropTypes.node.isRequired,
 };
 

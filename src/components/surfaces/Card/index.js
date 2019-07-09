@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import { Grid, Row, Col, Box, Button, Typography } from '@smooth-ui/core-sc';
 import useMedia from 'utils/hooks/useMedia';
 
-import ProjectImage from 'assets/images/project.jpg';
-
 const ResponsiveImage = styled.img`
   max-width: 100%;
   height: auto;
@@ -19,7 +17,7 @@ const Description = styled.p`
   word-wrap: break-word;
 `;
 
-const SectionA = () => (
+const SectionA = ({ name, subtitle, description, url }) => (
   <Col xl={9} lg={9} md={8} sm={12} xs={12}>
     <Box
       display="flex"
@@ -27,19 +25,11 @@ const SectionA = () => (
       flexDirection="column"
       backgroundColor="white"
     >
-      <Typography variant="h2">Perfect Timing</Typography>
-      <Typography variant="h6">EP Collab with Metroboomin - 2019</Typography>
-      <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        vestibulum nisl ut nisi viverra, at interdum elit placerat. Mauris
-        lacinia maximus velit id egestas. Sed pulvinar dignissim massa, nec
-        hendrerit quam ultrices non. Donec volutpat turpis blandit odio posuere
-        ultrices. Proin nec eros lorem. Integer feugiat pulvinar pellentesque.
-        Maecenas risus neque, lobortis vel dapibus vitae, volutpat eu tellus. Ut
-        sollicitudin odio mi, posuere imperdiet sem aliquet vitae.
-      </Description>
+      <Typography variant="h2">{name}</Typography>
+      <Typography variant="h6">{subtitle}</Typography>
+      <Description>{description}</Description>
 
-      <Link to="/project/app">
+      <Link to={url}>
         <Button mb={10} alignSelf="flex-start" variant="dark">
           Learn more
         </Button>
@@ -48,7 +38,7 @@ const SectionA = () => (
   </Col>
 );
 
-const SectionB = () => (
+const SectionB = ({ image }) => (
   <Col xl={3} lg={3} md={4} sm={12} xs={12}>
     <Box
       display="flex"
@@ -56,32 +46,58 @@ const SectionB = () => (
       alignItems="center"
       backgroundColor="white"
     >
-      <ResponsiveImage alt="Project" src={ProjectImage} />
+      <ResponsiveImage alt="Project" src={image} />
     </Box>
   </Col>
 );
 
-const Card = ({ flipped }) => {
+const Card = ({ name, subtitle, description, url, image, flipped }) => {
   const isSmallScreen = useMedia('(max-width: 767px)');
   return (
     <Grid mt={20} ml={0} mr={0}>
       {!flipped || isSmallScreen ? (
         <Row>
-          <SectionA />
-          <SectionB />
+          <SectionA
+            name={name}
+            subtitle={subtitle}
+            description={description}
+            url={url}
+          />
+          <SectionB image={image} />
         </Row>
       ) : (
         <Row>
-          <SectionB />
-          <SectionA />
+          <SectionB image={image} />
+          <SectionA
+            name={name}
+            subtitle={subtitle}
+            description={description}
+            url={url}
+          />
         </Row>
       )}
     </Grid>
   );
 };
 
+SectionA.propTypes = {
+  name: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+
+SectionB.propTypes = {
+  image: PropTypes.string.isRequired,
+};
+
 Card.propTypes = {
   flipped: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {

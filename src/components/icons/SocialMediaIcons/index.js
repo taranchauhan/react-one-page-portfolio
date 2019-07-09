@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   FaGithub,
   FaHackerrank,
@@ -13,21 +14,33 @@ const IconsContainer = styled.div`
   justify-content: center;
 `;
 
-const SocialMediaIcons = () => (
-  <IconsContainer>
-    <SocialMediaIcon link="https://github.com">
-      <FaGithub />
-    </SocialMediaIcon>
-    <SocialMediaIcon link="https://hackerrank.com">
-      <FaHackerrank />
-    </SocialMediaIcon>
-    <SocialMediaIcon link="https://linkedin.com">
-      <FaLinkedin />
-    </SocialMediaIcon>
-    <SocialMediaIcon link="https://stackoverflow.com">
-      <FaStackOverflow />
-    </SocialMediaIcon>
-  </IconsContainer>
+const SocialMediaIcons = ({ icons }) => (
+  <React.Fragment>
+    {icons.length ? (
+      <IconsContainer>
+        {icons.map(
+          icon =>
+            icon.url && (
+              <SocialMediaIcon key={icon.name} link={icon.url}>
+                {icon.name === 'github' && <FaGithub />}
+                {icon.name === 'hackerrank' && <FaHackerrank />}
+                {icon.name === 'linkedin' && <FaLinkedin />}
+                {icon.name === 'stackoverflow' && <FaStackOverflow />}
+              </SocialMediaIcon>
+            ),
+        )}
+      </IconsContainer>
+    ) : null}
+  </React.Fragment>
 );
+
+SocialMediaIcons.propTypes = {
+  icons: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default SocialMediaIcons;

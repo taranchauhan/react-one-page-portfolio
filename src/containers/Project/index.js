@@ -23,10 +23,9 @@ const ResponsiveImage = styled.img`
 `;
 
 const Subtitle = styled.p`
-  margin-top: 1rem;
-  font-weight: 200;
+  margin-top: 0.5rem;
+  font-weight: 400;
   font-size: 1.2rem;
-  color: darkgray;
 `;
 
 const ChipContainer = styled.div`

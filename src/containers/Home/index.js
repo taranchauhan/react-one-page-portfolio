@@ -1,18 +1,19 @@
 import React from 'react';
-import { Typography } from '@smooth-ui/core-sc';
-import BaseContainer from 'components/BaseContainer';
-import { Link } from 'react-router-dom';
+import BaseContainer from 'components/fixtures/BaseContainer';
+import Card from 'components/surfaces/Card';
 
 const Project = () => (
   <BaseContainer
-    variant="h1"
-    title="Forename Surname"
+    title="Navraj Singh"
     subtitle="Full Stack Developer"
+    subtitleValue="Rexdale, Canada"
   >
-    <Typography variant="p">This is the home page</Typography>
-    <Typography variant="h6">
-      <Link to="/project/app">Learn more...</Link>
-    </Typography>
+    <Card />
+    <Card flipped />
+    <Card />
+    <Card flipped />
+    <Card />
+    <Card flipped />
   </BaseContainer>
 );
 

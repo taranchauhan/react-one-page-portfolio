@@ -14,7 +14,7 @@ const ResponsiveImage = styled.img`
 
 const Title = styled.span`
   margin-top: 0.5rem;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 1.2rem;
 `;
 

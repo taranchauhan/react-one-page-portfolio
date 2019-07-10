@@ -1,9 +1,9 @@
 import React from 'react';
 import { Grid, Row, Col } from '@smooth-ui/core-sc';
 import BaseContainer from 'components/fixtures/BaseContainer';
-import Card from 'components/surfaces/Card';
 import MainContext from 'context/MainContext';
 import MainContextProvider from 'context/MainContextProvider';
+import Card from 'components/surfaces/Card';
 
 const Home = () => (
   <MainContextProvider>
@@ -31,9 +31,9 @@ const Home = () => (
                     <Card
                       name={context.projects[key].name}
                       subtitle={`
-                      ${context.projects[key].subtitle} - 
-                      ${context.projects[key].subtitleValue}
-                      `}
+                        ${context.projects[key].subtitle} - 
+                        ${context.projects[key].subtitleValue}
+                        `}
                       image={context.projects[key].images[0].ref}
                       url={context.projects[key].url}
                     />

@@ -24,7 +24,7 @@ const ResponsiveImage = styled.img`
 
 const Subtitle = styled.p`
   margin-top: 0.5rem;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 1.2rem;
 `;
 

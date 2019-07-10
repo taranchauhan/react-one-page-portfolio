@@ -20,12 +20,46 @@ const CentralAlign = styled.div`
   transform: translateY(-50%);
 `;
 
-const Footer = () => (
-  <FooterContainer>
-    <CentralAlign>
-      <BackToTopButton scrollStepInPx="50" delayInMs="16.66" />
-    </CentralAlign>
-  </FooterContainer>
-);
+class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+
+    this.state = {
+      showFooter: false,
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    const scroll = {
+      y: window.pageYOffset || event.target.documentElement.scrollTop,
+    };
+
+    if (scroll.y > 200) {
+      this.setState({ showFooter: true });
+    } else if (scroll.y < 200) {
+      this.setState({ showFooter: false });
+    }
+  }
+
+  render() {
+    const { showFooter } = this.state;
+    return showFooter ? (
+      <FooterContainer>
+        <CentralAlign>
+          <BackToTopButton scrollStepInPx="50" delayInMs="16.66" />
+        </CentralAlign>
+      </FooterContainer>
+    ) : null;
+  }
+}
 
 export default Footer;

@@ -14,7 +14,7 @@ const ResponsiveImage = styled.img`
 
 const Title = styled.span`
   margin-top: 0.5rem;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 1.2rem;
 `;
 
@@ -25,8 +25,9 @@ const Subtitle = styled.span`
   color: darkgray;
 `;
 
-const Card = ({ name, subtitle, image, url }) => (
+const Card = ({ onLoad, name, subtitle, image, url }) => (
   <Box
+    onLoad={onLoad}
     mb={25}
     display="flex"
     flexDirection="column"
@@ -42,6 +43,7 @@ const Card = ({ name, subtitle, image, url }) => (
 );
 
 Card.propTypes = {
+  onLoad: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,

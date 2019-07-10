@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
+import FadeIn from 'react-lazyload-fadein';
 import BaseContainer from 'components/fixtures/BaseContainer';
 import Chip from 'components/surfaces/Chip';
 import MainContext from 'context/MainContext';
@@ -24,7 +25,7 @@ const ResponsiveImage = styled.img`
 
 const Subtitle = styled.p`
   margin-top: 0.5rem;
-  font-weight: 400;
+  font-weight: 900;
   font-size: 1.2rem;
 `;
 
@@ -59,10 +60,16 @@ const Project = ({ location }) => {
                 {context.projects[pathname].description}
               </Description>
               {context.projects[pathname].images.map(image => (
-                <div key={image.caption}>
-                  <ResponsiveImage alt="Screenshot" src={image.ref} />
-                  <Subtitle>{image.caption}</Subtitle>
-                </div>
+                <FadeIn
+                  key={image.caption}
+                  height={600}
+                  render={onload => (
+                    <div onLoad={onload}>
+                      <ResponsiveImage alt="Screenshot" src={image.ref} />
+                      <Subtitle>{image.caption}</Subtitle>
+                    </div>
+                  )}
+                />
               ))}
             </BaseContainer>
           )

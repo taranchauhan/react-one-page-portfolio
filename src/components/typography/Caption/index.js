@@ -6,7 +6,6 @@ const CaptionText = styled.h1`
   color: darkgray;
   font-size: 38px;
   font-weight: 200;
-  margin-top: 52px;
   max-width: 960px;
   line-height: 60px;
 `;

@@ -19,7 +19,6 @@ const StyledContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 50px;
   margin-bottom: 75px;
 `;
 

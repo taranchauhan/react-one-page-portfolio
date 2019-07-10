@@ -7,6 +7,7 @@ import Subtitle from 'components/typography/Subtitle';
 import Caption from 'components//typography/Caption';
 import Footer from 'components/fixtures/Footer';
 import BackArrowButton from 'components/inputs/buttons/BackArrowButton';
+import withFade from 'utils/hoc/withFade';
 
 const StyledContainer = styled.div`
   @media only screen and (max-width: 991px) {
@@ -55,4 +56,4 @@ BaseContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default BaseContainer;
+export default withFade(BaseContainer);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Row, Col } from '@smooth-ui/core-sc';
+import FadeIn from 'react-lazyload-fadein';
 import BaseContainer from 'components/fixtures/BaseContainer';
 import MainContext from 'context/MainContext';
 import MainContextProvider from 'context/MainContextProvider';
@@ -28,15 +29,20 @@ const Home = () => (
                     xs={12}
                     key={context.projects[key].name}
                   >
-                    <Card
-                      name={context.projects[key].name}
-                      subtitle={`
+                    <FadeIn height={600}>
+                      {onload => (
+                        <Card
+                          onLoad={onload}
+                          name={context.projects[key].name}
+                          subtitle={`
                         ${context.projects[key].subtitle} - 
                         ${context.projects[key].subtitleValue}
                         `}
-                      image={context.projects[key].images[0].ref}
-                      url={context.projects[key].url}
-                    />
+                          image={context.projects[key].images[0].ref}
+                          url={context.projects[key].url}
+                        />
+                      )}
+                    </FadeIn>
                   </Col>
                 ))}
               </Row>

@@ -29,8 +29,9 @@ const Home = () => (
                     xs={12}
                     key={context.projects[key].name}
                   >
-                    <FadeIn height={600}>
-                      {onload => (
+                    <FadeIn
+                      height={600}
+                      render={onload => (
                         <Card
                           onLoad={onload}
                           name={context.projects[key].name}
@@ -42,7 +43,7 @@ const Home = () => (
                           url={context.projects[key].url}
                         />
                       )}
-                    </FadeIn>
+                    />
                   </Col>
                 ))}
               </Row>

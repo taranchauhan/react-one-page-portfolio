@@ -9,6 +9,15 @@ This repository assumes that you have the following installed:
 1. Node
 2. NPM
 
+## Editing Portfolio to include your content
+
+You will only need to edit `src/config.js`, which contains all the content for your portfolio.
+
+There are two objects:
+
+1. `profile`
+2. `projects`
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -23,7 +32,6 @@ Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
 ### `npm run build`
 

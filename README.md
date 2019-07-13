@@ -1,6 +1,6 @@
 # React one page Portfolio
 
-A one page react Portfolio template to showcase your work.
+A one page React Portfolio template to showcase your work.
 
 ## Prerequisites
 

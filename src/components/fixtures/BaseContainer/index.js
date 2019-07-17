@@ -28,12 +28,14 @@ const BaseContainer = ({
   subtitleValue,
   caption,
   socialIcons,
+  url,
   children,
+  ...props
 }) => (
-  <StyledContainer>
+  <StyledContainer {...props}>
     <BackArrowButton />
     <SocialMediaIcons icons={socialIcons} />
-    <Heading>{title}</Heading>
+    <Heading url={url}>{title}</Heading>
     <Subtitle subtitle={subtitle} subtitleValue={subtitleValue} />
     <Caption>{caption}</Caption>
     <ContentContainer>{children}</ContentContainer>
@@ -52,7 +54,12 @@ BaseContainer.propTypes = {
       url: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  url: PropTypes.string,
   children: PropTypes.node.isRequired,
+};
+
+BaseContainer.defaultProps = {
+  url: undefined,
 };
 
 export default withFade(BaseContainer);

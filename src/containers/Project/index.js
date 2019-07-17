@@ -49,6 +49,7 @@ const Project = ({ location }) => {
               subtitle={context.projects[pathname].subtitle}
               subtitleValue={context.projects[pathname].subtitleValue}
               caption={context.projects[pathname].caption}
+              url={context.projects[pathname].url}
               socialIcons={context.profile.socialIcons}
             >
               <ChipContainer>
@@ -65,7 +66,13 @@ const Project = ({ location }) => {
                   height={600}
                   render={onload => (
                     <div onLoad={onload}>
-                      <ResponsiveImage alt="Screenshot" src={image.ref} />
+                      <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={context.projects[pathname].url}
+                      >
+                        <ResponsiveImage alt="Screenshot" src={image.ref} />
+                      </a>
                       <Subtitle>{image.caption}</Subtitle>
                     </div>
                   )}

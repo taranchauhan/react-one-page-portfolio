@@ -12,10 +12,25 @@ const ResponsiveImage = styled.img`
   height: auto;
 `;
 
+const StyledAnchor = styled(Link)`
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  &:visited,
+  &:active {
+    color: black;
+  }
+  &:hover {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+  }
+`;
+
 const Title = styled.span`
   margin-top: 0.5rem;
   font-weight: 900;
   font-size: 1.2rem;
+  text-decoration: none;
 `;
 
 const Subtitle = styled.span`
@@ -37,8 +52,12 @@ const Card = ({ onLoad, name, subtitle, image, url }) => (
     <Link to={url}>
       <ResponsiveImage alt="Project" src={image} />
     </Link>
-    <Title variant="h2">{name}</Title>
-    <Subtitle variant="h6">{subtitle}</Subtitle>
+
+    <Title>
+      <StyledAnchor to={url}>{name}</StyledAnchor>
+    </Title>
+
+    <Subtitle>{subtitle}</Subtitle>
   </Box>
 );
 

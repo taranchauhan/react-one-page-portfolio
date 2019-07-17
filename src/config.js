@@ -32,7 +32,7 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/one',
+    url: 'https://www.google.com/',
   },
   two: {
     name: 'Project Two',
@@ -51,7 +51,7 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/two',
+    url: 'https://www.google.com/',
   },
   three: {
     name: 'Project Three',
@@ -70,7 +70,7 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/three',
+    url: 'https://www.google.com/',
   },
   four: {
     name: 'Project Four',
@@ -89,7 +89,7 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/four',
+    url: 'https://www.google.com/',
   },
   five: {
     name: 'Project Five',
@@ -108,7 +108,7 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/five',
+    url: 'https://www.google.com/',
   },
   six: {
     name: 'Project Six',
@@ -127,6 +127,6 @@ export const projects = {
       { caption: 'Screenshot 1', ref: '/images/project.jpg' },
       { caption: 'Screenshot 2', ref: '/images/project.jpg' },
     ],
-    url: '/project/six',
+    url: 'https://www.google.com/',
   },
 };

@@ -40,7 +40,7 @@ const Home = () => (
                         ${context.projects[key].subtitleValue}
                         `}
                           image={context.projects[key].images[0].ref}
-                          url={context.projects[key].url}
+                          url={`/project/${key}`}
                         />
                       )}
                     />

@@ -8,11 +8,12 @@ import Chip from 'components/surfaces/Chip';
 import MainContext from 'context/MainContext';
 import MainContextProvider from 'context/MainContextProvider';
 
-const Description = styled.p`
+const Description = styled.div`
   font-weight: 200;
   font-size: 15px;
   font-style: italic;
   word-wrap: break-word;
+  margin: 30px 0 30px 0;
 `;
 
 const ResponsiveImage = styled.img`
@@ -39,6 +40,10 @@ const ChipContainer = styled.div`
   justify-content: flex-start;
 `;
 
+function createMarkup(children) {
+  return { __html: children };
+}
+
 const Project = ({ location }) => {
   let { pathname } = location;
   pathname = pathname.split('/');
@@ -62,9 +67,11 @@ const Project = ({ location }) => {
                   <Chip key={tech}>{tech}</Chip>
                 ))}
               </ChipContainer>
-              <Description>
-                {context.projects[pathname].description}
-              </Description>
+              <Description
+                dangerouslySetInnerHTML={createMarkup(
+                  context.projects[pathname].description,
+                )}
+              />
               {context.projects[pathname].images.map(image => (
                 <FadeIn
                   key={image.caption}

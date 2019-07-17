@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledChip = styled.div`
   margin-right: 5px;
+  margin-bottom: 5px;
   color: rgba(0, 0, 0, 0.87);
   border: none;
   cursor: default;

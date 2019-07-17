@@ -13,7 +13,7 @@ const Description = styled.div`
   font-size: 15px;
   font-style: italic;
   word-wrap: break-word;
-  margin: 30px 0 30px 0;
+  margin: 25px 0 30px 0;
 `;
 
 const ResponsiveImage = styled.img`
@@ -38,6 +38,7 @@ const Subtitle = styled.p`
 const ChipContainer = styled.div`
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 `;
 
 function createMarkup(children) {

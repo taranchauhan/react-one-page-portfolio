@@ -69,7 +69,6 @@ const Project = ({ location }) => {
                 <FadeIn
                   key={image.caption}
                   height={600}
-                  offset={-100}
                   render={onload => (
                     <div onLoad={onload}>
                       <a

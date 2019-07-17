@@ -31,7 +31,6 @@ const Home = () => (
                   >
                     <FadeIn
                       height={600}
-                      offset={-100}
                       render={onload => (
                         <Card
                           onLoad={onload}

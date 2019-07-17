@@ -10,6 +10,11 @@ const ResponsiveImage = styled.img`
   }
   max-width: 100%;
   height: auto;
+
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 `;
 
 const StyledAnchor = styled(Link)`

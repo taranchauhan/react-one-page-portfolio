@@ -21,6 +21,11 @@ const ResponsiveImage = styled.img`
   }
   max-width: 100%;
   height: auto;
+
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
 `;
 
 const Subtitle = styled.p`
@@ -64,6 +69,7 @@ const Project = ({ location }) => {
                 <FadeIn
                   key={image.caption}
                   height={600}
+                  offset={-100}
                   render={onload => (
                     <div onLoad={onload}>
                       <a

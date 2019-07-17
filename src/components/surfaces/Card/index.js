@@ -40,7 +40,7 @@ const Title = styled.span`
 
 const Subtitle = styled.span`
   margin-top: 0.3rem;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 0.9rem;
   color: darkgray;
 `;

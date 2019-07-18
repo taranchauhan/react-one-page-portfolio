@@ -11,26 +11,26 @@ const StyledButton = styled.span`
 `;
 
 class BackArrowButton extends React.Component {
-  goBack() {
+  goHome() {
     const { history } = this.props;
-    history.goBack();
+    history.push('/');
   }
 
   render() {
-    const { history } = this.props;
-    const { action } = history;
+    const { location } = this.props;
+    const { pathname } = location;
 
     return (
       <div>
-        {action === 'PUSH' && (
+        {pathname !== '/' && (
           <StyledButton
             tabIndex="0"
             role="button"
             onKeyDown={() => {
-              this.goBack();
+              this.goHome();
             }}
             onClick={() => {
-              this.goBack();
+              this.goHome();
             }}
           >
             <BackArrowIcon />
@@ -42,9 +42,11 @@ class BackArrowButton extends React.Component {
 }
 
 BackArrowButton.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
   history: PropTypes.shape({
-    goBack: PropTypes.func.isRequired,
-    action: PropTypes.string,
+    push: PropTypes.func.isRequired,
   }).isRequired,
 };
 

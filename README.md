@@ -18,6 +18,8 @@ There are two objects:
 1. `profile`
 2. `projects`
 
+#### NOTE: The `caption` and `description` values take HTML as input.
+
 ## Available Scripts
 
 In the project directory, you can run:

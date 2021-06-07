@@ -23,9 +23,7 @@
     "test:nowatch": "CI=true react-scripts test --env=jsdom",
     "lint": "eslint --ext js,jsx src --fix",
     "pre-commit-verify": "npm run test:nowatch && lint-staged && pretty-quick --staged && npm audit",
-    "eject": "react-scripts eject",
-    "watch:core": "npm run watch -- --scope analytics --scope @analytics/core",
-    "test:core": "lerna run test --parallel --stream --scope @analytics/core",
+    "eject": "react-scripts eject"
   },
   "lint-staged": {
     "*.js": [
